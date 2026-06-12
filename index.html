@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiciGo - Tu ciudad, a tu ritmo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BiciGo - Tu ciudad, a tu ritmo | Descarga la App</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
             --azul-claro: #2980b9;
             --oscuro-texto: #2c3e50;
             --blanco-fondo: #f8f9fa;
+            --gris-suave: #ecf0f1;
         }
 
         * {
@@ -43,7 +44,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 8%;
             background: white;
             position: fixed;
             width: 100%;
@@ -52,22 +53,15 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--oscuro-texto);
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 5px;
         }
 
-        .logo span {
-            color: var(--verde-principal);
-        }
-
-        .logo i {
-            color: var(--azul-claro);
-            margin-right: 5px;
+        .brand-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -90,8 +84,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 54, 157, 0.75), rgba(44, 62, 80, 0.85)), 
-                        url('https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(10, 54, 157, 0.65), rgba(44, 62, 80, 0.75)), 
+                        url('https://github.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/fondo%202.png?raw=true') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -127,6 +121,7 @@
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
             transition: transform 0.3s, background-color 0.3s;
+            display: inline-block;
         }
 
         .cta-btn:hover {
@@ -237,10 +232,10 @@
             color: var(--azul-institucional);
         }
 
-        /* Tendencia 2026: Comunidad BiciGo (New Third Spaces) */
+        /* Comunidad BiciGo */
         .comunidad {
-            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)),
-                        url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80') center center/cover;
+            background: linear-gradient(rgba(248, 249, 250, 0.92), rgba(248, 249, 250, 0.92)),
+                        url('https://github.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/fondo%202.png?raw=true') center center/cover;
             text-align: center;
         }
 
@@ -260,7 +255,7 @@
 
         .ruta-card img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
         }
 
@@ -289,6 +284,130 @@
             font-weight: 700;
             font-size: 1.1rem;
             box-shadow: 0 4px 10px rgba(10, 54, 157, 0.2);
+        }
+
+        /* ========= SECCIÓN DESCARGA APP (NUEVA) ========= */
+        .app-download {
+            background: linear-gradient(135deg, #0a2b3f 0%, #0a369d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-download .section-title {
+            color: white;
+        }
+
+        .app-download .section-title::after {
+            background-color: var(--verde-principal);
+        }
+
+        .download-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Left side: mockup + chico */
+        .app-preview {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .app-preview-main {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .phone-mockup {
+            max-width: 220px;
+            border-radius: 32px;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: scale(1.02);
+        }
+
+        .rider-image {
+            max-width: 260px;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.25);
+            transition: transform 0.3s;
+        }
+
+        .rider-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .caption-app {
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-top: 8px;
+        }
+
+        /* Right side: Call to action + botones */
+        .cta-download {
+            flex: 1;
+            text-align: center;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+            border-radius: 48px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cta-download h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cta-download .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #e0f2fe;
+        }
+
+        .stores {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .store-btn {
+            transition: transform 0.2s, filter 0.2s;
+            display: inline-block;
+        }
+
+        .store-btn img {
+            height: 60px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .store-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
         }
 
         /* Formulario */
@@ -353,32 +472,57 @@
             padding: 40px 20px;
         }
 
-        .footer-brand {
-            font-size: 1.8rem;
-            font-weight: 900;
+        .footer-logo {
+            height: 55px;
+            width: auto;
             margin-bottom: 15px;
         }
 
-        .footer-brand span { color: var(--verde-principal); }
-
         /* Responsivo */
+        @media (max-width: 880px) {
+            .download-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .cta-download {
+                width: 100%;
+            }
+            .app-preview-main {
+                flex-direction: column;
+            }
+            .phone-mockup, .rider-image {
+                max-width: 200px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nosotros-container { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.3rem; }
-            .nav-links { display: none; } /* Simplificado para el ejemplo */
+            .nav-links { display: none; } 
+            .section-title { font-size: 2rem; }
+            .cta-download h3 { font-size: 1.6rem; }
+            .store-btn img { height: 50px; }
+        }
+
+        /* Ajuste para que los botones sean clickeables */
+        a.store-btn {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><i class="fa-solid fa-bicycle"></i>Bici<span>Go</span></div>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/logo%20transparente%20en%20vectores.png" alt="BiciGo Logo" class="brand-logo">
+        </div>
         <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#comunidad">Comunidad</a></li>
             <li><a href="#ciudades">Presencia</a></li>
+            <li><a href="#app-download-section">Descargar App</a></li>
             <li><a href="#suscripcion">Suscripción</a></li>
         </ul>
     </nav>
@@ -386,7 +530,7 @@
     <section id="inicio" class="hero">
         <h1 data-aos="fade-down" data-aos-duration="1000">Tu ciudad, a tu ritmo.</h1>
         <p data-aos="fade-up" data-aos-duration="1200">Ofrecemos una movilidad ágil, humana y sustentable. BiciGo no es solo una app de renta de bicicletas; es tu aliado para recuperar el control de tu tiempo y vivir la ciudad con total libertad.</p>
-        <a href="#suscripcion" class="cta-btn" data-aos="zoom-in" data-aos-delay="500">Descarga la App y muévete libre</a>
+        <a href="#app-download-section" class="cta-btn" data-aos="zoom-in" data-aos-delay="500">Descarga la App y muévete libre</a>
     </section>
 
     <section id="nosotros">
@@ -409,7 +553,7 @@
                 </div>
             </div>
             <div class="nosotros-img" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80" alt="Estilo de vida BiciGo">
+                <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/Gemini_Generated_Image_rasn28rasn28rasn.png" alt="Estilo de vida BiciGo">
             </div>
         </div>
     </section>
@@ -461,24 +605,24 @@
         <p data-aos="fade-up">¡Más que una app, un nuevo espacio de encuentro! Descubre las rutas favoritas compartidas por nuestra comunidad este 2026.</p>
         <div class="comunidad-grid">
             <div class="ruta-card" data-aos="flip-left">
-                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=400&q=80" alt="Ruta Reforma">
+                <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/GHBX4DLKFRGNJOFAPLUAAT4XJE.jpg" alt="Ruta Verde Reforma">
                 <div class="ruta-info">
                     <h4>Ruta Verde Reforma (CDMX)</h4>
                     <p>Compartida por: @Carlos_Pedal</p>
                 </div>
             </div>
             <div class="ruta-card" data-aos="flip-left" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=400&q=80" alt="Ruta Colomos">
+                <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/Gemini_Generated_Image_lcqi4vlcqi4vlcqi.png" alt="Ruta Colomos">
                 <div class="ruta-info">
                     <h4>Circuito Colomos (Guadalajara)</h4>
                     <p>Compartida por: @Sofia_Eco</p>
                 </div>
             </div>
             <div class="ruta-card" data-aos="flip-left" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1571064599736-683ed4444b82?auto=format&fit=crop&w=400&q=80" alt="Ruta Centro Mérida">
+                <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/foto%20merida.png" alt="Ruta Centro Mérida">
                 <div class="ruta-info">
                     <h4>Paseo Montejo (Mérida)</h4>
-                    <p>Compartida por: @Andres_Bici</p>
+                    <p>Compartida por: @Andres_BK</p>
                 </div>
             </div>
         </div>
@@ -496,6 +640,37 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: DESCARGA DE APLICACIÓN con preview, chico + botones -->
+    <section id="app-download-section" class="app-download">
+        <h2 class="section-title" data-aos="fade-up">Descarga la experiencia BiciGo</h2>
+        <div class="download-container">
+            <!-- Lado izquierdo: previsualización app + foto del usuario con bici -->
+            <div class="app-preview" data-aos="fade-right">
+                <div class="app-preview-main">
+                    <img class="phone-mockup" src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/app%20bicigo.png" alt="Vista previa de la aplicación BiciGo">
+                    <img class="rider-image" src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/Gemini_Generated_Image_dhh8thdhh8thdhh8.png?raw=true" alt="Chico posando con bicicleta BiciGo">
+                </div>
+                <div class="caption-app">✨ BiciGo: pedalea, ahorra y vive la ciudad ✨</div>
+            </div>
+
+            <!-- Lado derecho: llamado a la acción + botones descarga -->
+            <div class="cta-download" data-aos="fade-left">
+                <h3>🚲 Listo para rodar?</h3>
+                <div class="tagline">Descarga la aplicación, desbloquea tu primera bici y únete al movimiento.</div>
+                <div class="stores">
+                    <a href="#" class="store-btn" target="_blank" onclick="alert('📱 Serás redirigido a Google Play (demo). ¡Pronto disponible oficialmente!');">
+                        <img src="https://github.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/Google_play-download.png?raw=true" alt="Descargar en Google Play">
+                    </a>
+                    <a href="#" class="store-btn" target="_blank" onclick="alert('📱 Serás redirigido a App Store (demo). Disponible muy pronto para iOS.');">
+                        <img src="https://github.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/App_store-download.png?raw=true" alt="Descargar en App Store">
+                    </a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.85rem; opacity: 0.8;"><i class="fa-solid fa-bicycle"></i> Sin tráfico, sin estrés. Miles de viajes felices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SUSCRIPCIÓN / FORMULARIO -->
     <section id="suscripcion" class="contacto">
         <h2 class="section-title" data-aos="fade-up">Únete al movimiento</h2>
         <div class="form-container" data-aos="fade-up">
@@ -534,7 +709,7 @@
     </section>
 
     <footer>
-        <div class="footer-brand"><i class="fa-solid fa-bicycle"></i>Bici<span>Go</span></div>
+        <img src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/logo%20transparente%20en%20vectores.png" alt="BiciGo Logo" class="footer-logo">
         <p>© 2026 BiciGo. Movilidad ágil, humana y sustentable.</p>
         <p style="font-size: 0.8rem; margin-top: 10px; color: #bdc3c7;">Valores: Sustentabilidad | Seguridad | Accesibilidad</p>
     </footer>
@@ -542,8 +717,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800, // Duración de las animaciones en milisegundos
-            once: true // La animación ocurre solo una vez al hacer scroll hacia abajo
+            duration: 800, 
+            once: true 
+        });
+
+        // Pequeño helper para que los enlaces de navegación sean suaves y no choquen con el header fijo
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || targetId === "") return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const offsetTop = targetElement.offsetTop - 70; // ajuste por navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            });
         });
     </script>
 </body>
