@@ -644,11 +644,12 @@
     <section id="app-download-section" class="app-download">
         <h2 class="section-title" data-aos="fade-up">Descarga la experiencia BiciGo</h2>
         <div class="download-container">
-            <!-- Lado izquierdo: previsualización app + foto del usuario con bici -->
+            <!-- Lado izquierdo: previsualización app + foto del usuario con bici (imagen correcta) -->
             <div class="app-preview" data-aos="fade-right">
                 <div class="app-preview-main">
                     <img class="phone-mockup" src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/app%20bicigo.png" alt="Vista previa de la aplicación BiciGo">
-                    <img class="rider-image" src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/blob/main/carpeta/Gemini_Generated_Image_dhh8thdhh8thdhh8.png?raw=true" alt="Chico posando con bicicleta BiciGo">
+                    <!-- Imagen correcta del chico con la bicicleta -->
+                    <img class="rider-image" src="https://raw.githubusercontent.com/DanbenjaminHC/bicigo-proyct/refs/heads/main/carpeta/Gemini_Generated_Image_dhh8thdhh8thdhh8.png" alt="Chico posando con bicicleta BiciGo">
                 </div>
                 <div class="caption-app">✨ BiciGo: pedalea, ahorra y vive la ciudad ✨</div>
             </div>
@@ -721,7 +722,7 @@
             once: true 
         });
 
-        // Pequeño helper para que los enlaces de navegación sean suaves y no choquen con el header fijo
+        // Suavizado de navegación con offset por navbar fijo
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -729,7 +730,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-                    const offsetTop = targetElement.offsetTop - 70; // ajuste por navbar
+                    const offsetTop = targetElement.offsetTop - 70;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: "smooth"
